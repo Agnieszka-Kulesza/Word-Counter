@@ -1,0 +1,250 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{RowBox[{RowBox[{"strumien1"," ","="," ",RowBox[
+{"Import","[",RowBox[{"\"https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt\"",",","\"Words\""}],"]"}]}],";"}],"\n",RowBox[
+{"Length","[","strumien1","]"}]}],"Input",CellLabel -> "In[78]:= ",ExpressionUUID -> "2144ae07-48cd-47e5-9404-40984e5dba81"],Cell[
+BoxData[
+"69063",StandardForm],"Output",CellLabel -> "Out[79]= ",ExpressionUUID -> "0a9642d0-343d-43b8-bc93-7304b3f7295f"]},
+Open],ExpressionUUID -> "b82ffbbf-ec35-4f6e-945c-3a8916598341"],Cell[
+BoxData[RowBox[
+{RowBox[{"strumien2"," ","="," ",RowBox[{"Take","[",RowBox[{"strumien1",",",RowBox[
+{"{",RowBox[{"1",",",RowBox[{"Length","[","strumien1","]"}]}],"}"}]}],"]"}]}],";"}]],
+"Input",CellLabel -> "In[80]:= ",ExpressionUUID -> "f22b20a5-f370-42c7-a35b-45e79bdc606f"],Cell[
+BoxData[
+RowBox[{RowBox[{"strumien2"," ","="," ",RowBox[{"StringSplit","[",RowBox[{"strumien2",",",RowBox[
+{"{",RowBox[{"\";\"",",","\",\"",",","\".\"",",","\"?\"",",","\":\"",",","\"!\"",",","\"(\"",",","\")\"",",","\"/\"",",","\"\[RightGuillemet]\""," ",",","\"\[LeftGuillemet]\""}],"}"}]}],"]"}]}],";"}]],
+"Input",CellLabel -> "In[81]:= ",ExpressionUUID -> "68d82853-3d1b-47ce-bcd0-ac27ea63153d"],Cell[
+BoxData[
+RowBox[{RowBox[{"strumien2"," ","="," ",RowBox[{"Flatten","[",RowBox[{"ToLowerCase","[","strumien2","]"}],"]"}]}],";"}]],
+"Input",CellLabel -> "In[82]:= ",ExpressionUUID -> "3df34b1a-6107-460c-80ad-5155f3b8985b"],Cell[
+BoxData[
+RowBox[{RowBox[{"zliczone"," ","="," ",RowBox[{"Tally","[","strumien2","]"}]}],";"}]],
+"Input",CellLabel -> "In[83]:= ",ExpressionUUID -> "ab3cc15f-67f5-41e5-b795-85a99baacf73"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"lista1b"," ","="," ",RowBox[{"Select","[",RowBox[
+{"strumien2",","," ",RowBox[{RowBox[{"LetterQ","[","#","]"}],"&"}]}],"]"}]}],";"}],"\n",RowBox[
+{"Length","[","lista1b","]"}]}],"Input",CellLabel -> "In[84]:= ",ExpressionUUID -> "7e72b0b0-ac89-4c7b-aa28-fee465d1dbaa"],Cell[
+BoxData[
+"68141",StandardForm],"Output",CellLabel -> "Out[85]= ",ExpressionUUID -> "4ed4dfc9-3857-4ef5-90c4-c25a1024886a"]},
+Open],ExpressionUUID -> "562cca8b-a622-48f7-913d-16cf2c2f416a"],Cell[
+BoxData[RowBox[
+{RowBox[{"lista10"," ","="," ",RowBox[{"Tally","[",RowBox[{"ToLowerCase","[","lista1b","]"}],"]"}]}],";"}]],
+"Input",CellLabel -> "In[86]:= ",ExpressionUUID -> "bea040cd-ec58-4697-add7-a052fa6f4eca"],Cell[
+BoxData[
+RowBox[{RowBox[{"prawda"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{RowBox[{"StringLength","[",RowBox[
+{RowBox[{"lista10","[",RowBox[{"[","i","]"}],"]"}],"[",RowBox[{"[","1","]"}],"]"}],"]"}],"\[GreaterEqual]","5"}],",",RowBox[
+{"{",RowBox[{"i",",","1",",",RowBox[{"Length","[","lista10","]"}]}],"}"}]}],"]"}]}],";"}]],
+"Input",CellLabel -> "In[87]:= ",ExpressionUUID -> "a0bbdd13-b219-4a1d-948d-3e3fb2907cb2"],Cell[
+BoxData[
+RowBox[{RowBox[{"pozycje"," ","="," ",RowBox[{"Flatten","[",RowBox[{"Position","[",RowBox[
+{"prawda",","," ","True"}],"]"}],"]"}]}],";"}]],"Input",CellLabel -> "In[88]:= ",
+ExpressionUUID -> "ed609dab-da87-4443-a249-3335ee41db39"],Cell[
+BoxData[RowBox[{RowBox[
+{"slowa"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{"lista10","[",RowBox[{"[",RowBox[
+{"pozycje","[",RowBox[{"[","i","]"}],"]"}],"]"}],"]"}],",",RowBox[{"{",RowBox[{"i",",","1",",",RowBox[
+{"Length","[","pozycje","]"}]}],"}"}]}],"]"}]}],";"}]],"Input",CellLabel -> "In[89]:= ",
+ExpressionUUID -> "fcf6b850-6e8c-46c7-b945-a0ce91ce6927"],Cell[
+BoxData[RowBox[{RowBox[
+{"b"," ","="," ",RowBox[{RowBox[{"SortBy","[","Last","]"}],"[","slowa","]"}]}],";"}]],
+"Input",CellLabel -> "In[90]:= ",ExpressionUUID -> "2a99f902-aa17-41bf-89c3-a90bdd7e371d"],Cell[
+BoxData[
+RowBox[{RowBox[{"koniec"," ","="," ",RowBox[{"Reverse","[","b","]"}]}],";"}]],"Input",
+CellLabel -> "In[91]:= ",ExpressionUUID -> "418cecdd-72a5-4ec9-b710-3038e88f7e20"],Cell[
+BoxData[
+RowBox[{RowBox[{"wykres1"," ","="," ",RowBox[{"koniec","[",RowBox[{"[",RowBox[{"1",";;","20"}],"]"}],"]"}]}],";"}]],
+"Input",CellLabel -> "In[92]:= ",ExpressionUUID -> "a7a6602a-7f58-4025-9883-02c861d6c135"],Cell[
+BoxData[
+RowBox[{RowBox[{"wykres"," ","="," ",RowBox[{"Reverse","[","wykres1","]"}]}],";"}]],
+"Input",CellLabel -> "In[93]:= ",ExpressionUUID -> "1925086e-3be4-4317-a9ec-aca6481e4ac5"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"nazwy"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{RowBox[
+{"wykres","[",RowBox[{"[","i","]"}],"]"}],"[",RowBox[{"[","1","]"}],"]"}],",",RowBox[
+{"{",RowBox[{"i",",","1",",",RowBox[{"Length","[","wykres","]"}]}],"}"}]}],"]"}]}]],
+"Input",CellLabel -> "In[94]:= ",ExpressionUUID -> "7d921fd1-85f6-4132-97bb-7c52788b5cd0"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"\"wszystko\"",",","\"nawet\"",",","\"znowu\"",",","\"kt\[OAcute]ry\"",",","\"je\:015bli\"",",","\"kiedy\"",",","\"niech\"",",","\"teraz\"",",","\"potem\"",",","\"wojski\"",",","\"wszyscy\"",",","\"gdzie\"",",","\"przez\"",",","\"jeszcze\"",",","\"przed\"",",","\"tadeusz\"",",","\"s\:0119dzia\"",",","\"hrabia\"",",","\"tylko\"",",","\"rzek\[LSlash]\""}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[94]= ",ExpressionUUID -> "fc6b76cd-d17f-44ea-bfab-caa73bb1d54c"]},
+Open],ExpressionUUID -> "f3da2d2a-4fca-40ef-bd0c-eb3ed311f65c"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"ilosc"," ","="," "," ",RowBox[{"Flatten","[",RowBox[{"Table","[",RowBox[
+{RowBox[{RowBox[{"wykres","[",RowBox[{"[","i","]"}],"]"}],"[",RowBox[{"[","2","]"}],"]"}],",",RowBox[
+{"{",RowBox[{"i",",","1",",",RowBox[{"Length","[","wykres","]"}]}],"}"}]}],"]"}],"]"}]}]],
+"Input",CellLabel -> "In[95]:= ",ExpressionUUID -> "651a9634-c2a8-41f4-b3ee-112f359902bc"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"67",",","71",",","71",",","72",",","73",",","73",",","75",",","83",",","86",",","89",",","90",",","94",",","99",",","100",",","102",",","107",",","127",",","129",",","149",",","155"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[95]= ",ExpressionUUID -> "cc4594ea-d64c-46f5-bc1b-ba605d6c86ac"]},
+Open],ExpressionUUID -> "4afd2513-8b4f-43cd-8d00-c6f3403fab07"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"BarChart","[",RowBox[{"ilosc",",",RowBox[{"ChartLabels","\[Rule]",RowBox[
+{"Placed","[",RowBox[{"nazwy",",","After"}],"]"}]}],","," ",RowBox[{"BarOrigin"," ","\[Rule]"," ","Left"}],",",RowBox[
+{"LabelingFunction"," ","\[Rule]","Center"}]," ",",",RowBox[{"BarSpacing"," ","\[Rule]","Medium"}],","," ",RowBox[
+{"ColorFunction","\[Rule]","\"LakeColors\""}],","," ",RowBox[{"PlotLabel"," ","\[Rule]"," ","\n","  ",RowBox[
+{"Style","[",RowBox[{RowBox[{"Framed","[","\"Adam Mickiewicz \:201ePan Tadeusz\[CloseCurlyDoubleQuote] (68.141 s\[LSlash]\[OAcute]w). \\n20 najcz\:0119\:015bciej wyst\:0119puj\:0105cych s\[LSlash]\[OAcute]w d\[LSlash]ugo\:015bci co najmniej 5.\"","]"}],","," ","10",","," ","Black"}],"]"}]}]}]," ","]"}]],
+"Input",CellLabel -> "In[118]:= ",ExpressionUUID -> "c9ebfab3-b13f-40ff-9afd-6b202819c59d"],Cell[
+BoxData[
+GraphicsBox[{{Opacity[0],PointBox[CompressedData["1:eJxTTMoPSmNiYGAoZgESPpnFJai8IgYoKHqnZsixRuaUPS75NDAwcQAAiwEQdA=="]]},{{},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.982864,
+0.7431472,0.3262672]],{{Directive[EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],
+RGBColor[0.293416,0.0574044,0.529412]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,0.6000000000000001},{67.0,1.4000000000000001},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.3302894090909091,
+0.1215172090909091,0.5812420454545455]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,1.6},{71.0,2.4000000000000004},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.3302894090909091,
+0.1215172090909091,0.5812420454545455]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,2.6000000000000005},{71.0,3.4000000000000004},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.33950776136363636,
+0.13754541136363635,0.5941995568181818]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,3.6000000000000005},{72.0,4.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.34872611363636363,
+0.15357361363636363,0.6071570681818181]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,4.6000000000000005},{73.0,5.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.34872611363636363,
+0.15357361363636363,0.6071570681818181]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,5.6000000000000005},{73.0,6.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.3671628181818182,
+0.18563001818181818,0.6330720909090909]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,6.6000000000000005},{75.0,7.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.4409096363636364,
+0.3138556363636364,0.7367321818181818]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,7.6000000000000005},{83.0,8.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.4685646931818182,
+0.36194024318181817,0.7756047159090909]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,8.6},{86.0,9.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.49621975,
+0.41002485,0.8144772499999999]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],
+EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,9.6},{89.0,10.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.5054381022727272,
+0.4260530522727273,0.8274347613636364]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,10.6},{90.0,11.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.5423115113636364,
+0.4901658613636364,0.8792648068181819]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,11.6},{94.0,12.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.5818946363636364,
+0.5566043636363636,0.9099109999999999]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,12.6},{99.0,13.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.58867225,
+0.567494125,0.9100655]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],
+EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,13.6},{100.0,14.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.6022274772727273,
+0.5892736477272726,0.9103745]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],
+EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,14.6},{102.0,15.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.6361155454545454,
+0.6437224545454545,0.9111469999999999]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,15.6},{107.0,16.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.7707466818181817,
+0.8497043636363637,0.9103951818181819]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,16.599999999999998},{127.0,17.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.7829202045454545,
+0.8537639090909092,0.9049414545454546]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,17.599999999999998},{129.0,18.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.9046554318181819,
+0.8943593636363636,0.8504041818181818]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue[
+"MouseOver"],EdgeForm[{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[
+{0.0,18.599999999999998},{149.0,19.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.5599999999999999]]],RGBColor[0.941176,
+0.906538,0.834043]],TagBox[DynamicBox[{FEPrivate`If[CurrentValue["MouseOver"],EdgeForm[
+{GrayLevel[0.5],AbsoluteThickness[1.5],Opacity[0.66]}],{},{}],RectangleBox[{0.0,19.599999999999998},
+{155.0,20.4},"RoundingRadius" -> 0]}],"DelayedMouseEffectStyle"]}}},{},{}},{},{InsetBox[
+FormBox[StyleBox["\"wszystko\"",{},StripOnInput -> False],TraditionalForm],Offset[
+{6,0},{67.0,1.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["67",{},StripOnInput -> False],
+TraditionalForm],{33.5,1.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"nawet\"",
+{},StripOnInput -> False],TraditionalForm],Offset[{6,0},{71.0,2.0}],ImageScaled[{0,0.5}]],InsetBox[
+FormBox[StyleBox["71",{},StripOnInput -> False],TraditionalForm],{35.5,2.0},ImageScaled[
+{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"znowu\"",{},StripOnInput -> False],TraditionalForm],
+Offset[{6,0},{71.0,3.0000000000000004}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox[
+"71",{},StripOnInput -> False],TraditionalForm],{35.5,3.0000000000000004},ImageScaled[
+{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"kt\[OAcute]ry\"",{},StripOnInput -> False],
+TraditionalForm],Offset[{6,0},{72.0,4.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[
+StyleBox["72",{},StripOnInput -> False],TraditionalForm],{36.0,4.0},ImageScaled[{0.5,0.5}]],InsetBox[
+FormBox[StyleBox["\"je\:015bli\"",{},StripOnInput -> False],TraditionalForm],Offset[
+{6,0},{73.0,5.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["73",{},StripOnInput -> False],
+TraditionalForm],{36.5,5.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"kiedy\"",
+{},StripOnInput -> False],TraditionalForm],Offset[{6,0},{73.0,6.0}],ImageScaled[{0,0.5}]],InsetBox[
+FormBox[StyleBox["73",{},StripOnInput -> False],TraditionalForm],{36.5,6.0},ImageScaled[
+{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"niech\"",{},StripOnInput -> False],TraditionalForm],
+Offset[{6,0},{75.0,7.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["75",{},
+StripOnInput -> False],TraditionalForm],{37.5,7.0},ImageScaled[{0.5,0.5}]],InsetBox[
+FormBox[StyleBox["\"teraz\"",{},StripOnInput -> False],TraditionalForm],Offset[{6,0},
+{83.0,8.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["83",{},StripOnInput -> False],
+TraditionalForm],{41.5,8.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"potem\"",
+{},StripOnInput -> False],TraditionalForm],Offset[{6,0},{86.0,9.0}],ImageScaled[{0,0.5}]],InsetBox[
+FormBox[StyleBox["86",{},StripOnInput -> False],TraditionalForm],{43.0,9.0},ImageScaled[
+{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"wojski\"",{},StripOnInput -> False],TraditionalForm],
+Offset[{6,0},{89.0,10.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["89",{},
+StripOnInput -> False],TraditionalForm],{44.5,10.0},ImageScaled[{0.5,0.5}]],InsetBox[
+FormBox[StyleBox["\"wszyscy\"",{},StripOnInput -> False],TraditionalForm],Offset[
+{6,0},{90.0,11.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["90",{},StripOnInput -> False],
+TraditionalForm],{45.0,11.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"gdzie\"",
+{},StripOnInput -> False],TraditionalForm],Offset[{6,0},{94.0,12.0}],ImageScaled[
+{0,0.5}]],InsetBox[FormBox[StyleBox["94",{},StripOnInput -> False],TraditionalForm],
+{47.0,12.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"przez\"",{},StripOnInput -> False],
+TraditionalForm],Offset[{6,0},{99.0,13.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[
+StyleBox["99",{},StripOnInput -> False],TraditionalForm],{49.5,13.0},ImageScaled[
+{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"jeszcze\"",{},StripOnInput -> False],TraditionalForm],
+Offset[{6,0},{100.0,14.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["100",
+{},StripOnInput -> False],TraditionalForm],{50.0,14.0},ImageScaled[{0.5,0.5}]],InsetBox[
+FormBox[StyleBox["\"przed\"",{},StripOnInput -> False],TraditionalForm],Offset[{6,0},
+{102.0,15.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["102",{},StripOnInput -> False],
+TraditionalForm],{51.0,15.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"tadeusz\"",
+{},StripOnInput -> False],TraditionalForm],Offset[{6,0},{107.0,16.0}],ImageScaled[
+{0,0.5}]],InsetBox[FormBox[StyleBox["107",{},StripOnInput -> False],TraditionalForm],
+{53.5,16.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"s\:0119dzia\"",{},
+StripOnInput -> False],TraditionalForm],Offset[{6,0},{127.0,17.0}],ImageScaled[{0,0.5}]],InsetBox[
+FormBox[StyleBox["127",{},StripOnInput -> False],TraditionalForm],{63.5,17.0},ImageScaled[
+{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"hrabia\"",{},StripOnInput -> False],TraditionalForm],
+Offset[{6,0},{129.0,18.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["129",
+{},StripOnInput -> False],TraditionalForm],{64.5,18.0},ImageScaled[{0.5,0.5}]],InsetBox[
+FormBox[StyleBox["\"tylko\"",{},StripOnInput -> False],TraditionalForm],Offset[{6,0},
+{149.0,19.0}],ImageScaled[{0,0.5}]],InsetBox[FormBox[StyleBox["149",{},StripOnInput -> False],
+TraditionalForm],{74.5,19.0},ImageScaled[{0.5,0.5}]],InsetBox[FormBox[StyleBox["\"rzek\[LSlash]\"",
+{},StripOnInput -> False],TraditionalForm],Offset[{6,0},{155.0,20.0}],ImageScaled[
+{0,0.5}]],InsetBox[FormBox[StyleBox["155",{},StripOnInput -> False],TraditionalForm],
+{77.5,20.0},ImageScaled[{0.5,0.5}]]},{},{},{StyleBox[{Antialiasing -> False,{Directive[
+Thickness[Tiny]],{LineBox[CompressedData["1:eJxTTMoPSmNiYGAoZgESPpnFJai8IgYoKHqnZsixRuaUPS75dTNrNp89a+IAAJN8EiA="]]},StyleBox[
+{},{"GraphicsLabel"},StripOnInput -> False]},StyleBox[{{Directive[Thickness[Tiny]],LineBox[
+CompressedData["1:eJxTTMoPSmNiYGAoZgESPpnFJai8IgYoKDIxBoHH9hB5NiDhn5ZWnFqSyghkMsGUMUgcgDIaCBkEAAN8FDA="]],LineBox[
+CompressedData["1:eJxTTMoPSmNiYGAoZgESPpnFJai8IgYoKEoDAxMHiDwbkPBPSytOLUllBDKZYMoYJA5AGQ2EDAIAMzMVNg=="]],{{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}}},StyleBox[
+{},{"GraphicsLabel"},StripOnInput -> False]},{"GraphicsTicks"},StripOnInput -> False]},
+{"GraphicsAxes"},StripOnInput -> False]}},{DisplayFunction -> Identity,AspectRatio -> NCache[
+Power[GoldenRatio,-1],0.6180339887498948],Axes -> {True,False},AxesLabel -> {None,None},AxesOrigin -> {0.0,0.20400000000000013},CoordinatesToolOptions -> CompressedData[
+"1:eJxTTMoPSmNiYGAoZgESPpnFJQheUGlOajA/kOGSWVyQk1jpVpqXXJKZn5fGCFLBASTgIqgmwOU9U1LzSjJLKhHyAYlFUHkQLzgnvyQTxAMT5OgDKUBzsTCQ4ZxfkJmaEpaYU5o6WF0NAFk5TEk="],FrameLabel -> {{None,None},{None,None}},FrameTicks -> {{Automatic,Automatic},{Automatic,Automatic}},GridLines -> {None,None},GridLinesStyle -> Directive[
+GrayLevel[0.5,0.4]],PlotLabel -> FormBox[StyleBox[FrameBox["\"Adam Mickiewicz \:201ePan Tadeusz\[CloseCurlyDoubleQuote] (68.141 s\[LSlash]\[OAcute]w). \\n20 najcz\:0119\:015bciej wyst\:0119puj\:0105cych s\[LSlash]\[OAcute]w d\[LSlash]ugo\:015bci co najmniej 5.\"",
+StripOnInput -> False],10,GrayLevel[0],StripOnInput -> False],TraditionalForm],PlotRange -> {{All,All},{All,All}},PlotRangePadding -> {{Scaled[
+0.02],Scaled[0.05]},{Scaled[0.02],Scaled[0.02]}},Ticks -> {Automatic,None}},ExpressionUUID -> "4173cd6f-3fc9-4c12-83b2-c4d9e8bcfcd8"],
+StandardForm],"Output",CellLabel -> "Out[118]= ",ExpressionUUID -> "48667a21-ff43-4b43-baa0-2f01d76450a3"]},
+Open],ExpressionUUID -> "47a7bd5c-9768-44a8-9e19-97dbe18a2d66"],Cell[
+BoxData[""],
+"Input",ExpressionUUID -> "7207802e-25fd-48ed-a890-7a7e6b445734"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"CloudExport","[",RowBox[{"%",",","\"svg\""}],"]"}]],"Input",
+CellLabel -> "In[119]:= ",ExpressionUUID -> "1e6ca97a-339a-4c33-9528-88e064f7b7c0"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"CloudObject","[",TemplateBox[{"\"https://www.wolframcloud.com/obj/3c6d59cd-4d66-4d3e-ad5b-20f7b63f1b9a\"","https://www.wolframcloud.com/obj/3c6d59cd-4d66-4d3e-ad5b-20f7b63f1b9a"},
+"HyperlinkURL"],"]"}],CloudObject["https://www.wolframcloud.com/obj/3c6d59cd-4d66-4d3e-ad5b-20f7b63f1b9a"],
+SelectWithContents -> True],StandardForm],"Output",CellLabel -> "Out[119]= ",ExpressionUUID -> "795b4954-eba0-4cac-b955-6df0227e21df"]},
+Open],ExpressionUUID -> "37719508-06bb-4526-a113-6fcecdf87622"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "12.1 for Wolfram Cloud 1.56 (September 30, 2020)"]
